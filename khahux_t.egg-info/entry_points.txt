@@ -1,0 +1,3 @@
+[console_scripts]
+khahux_t = bin.khahux_t:main
+
