@@ -1,3 +1,4 @@
+README.md
 setup.py
 bin/__init__.py
 bin/khahux_t.py
@@ -6,5 +7,4 @@ khahux_t.egg-info/SOURCES.txt
 khahux_t.egg-info/dependency_links.txt
 khahux_t.egg-info/entry_points.txt
 khahux_t.egg-info/not-zip-safe
-khahux_t.egg-info/requires.txt
 khahux_t.egg-info/top_level.txt
