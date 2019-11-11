@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='khahux_t',
-    version='0.2.0',
+    version='0.3.0',
     author='90h',
     author_email='195022586@qq.com',
     packages=find_packages(),
@@ -17,6 +17,6 @@ setup(
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ]
 )

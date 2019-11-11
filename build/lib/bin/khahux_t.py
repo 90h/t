@@ -45,12 +45,13 @@ def show_json(json_data):
     error_code = json_data.get('errorCode')
     if error_code != 0:
         return print(u"""
-    [{}]{}
+    [\033[1;32;40m{}\033[0m]{}
         """.format(error_code, CODE_MSG_MAP.get(error_code)))
 
     query = json_data.get('query')
     translations = json_data.get('translation')
-    print(u'\n[{}]: {}'.format(query, ', '.join(translations)))
+    print()
+    print(u'    [{}]: \033[1;32;40m{}\033[0m'.format(query, '\033[1;31;40m; \033[0m'.join(translations)))
 
     basic = json_data.get('basic')
     if basic and isinstance(basic, dict):
@@ -58,23 +59,23 @@ def show_json(json_data):
         uk = basic.get('uk-phonetic', None)
         us = basic.get('us-phonetic', None)
         explains = basic.get('explains', [])
-        print(u'[phonetic] {}, [us] {}, [uk] {}'.format(phonetic, uk, us))
-        print(u'\n')
-        print(u', '.join(explains))
+        print(u'    [phonetic]{}; [us]\033[1;32;40m{}\033[0m; [uk]{}'.format(phonetic, uk, us))
+        print()
+        print(u'    ' + u'\033[1;31;40m; \033[0m'.join(explains))
+        print()
 
     web = json_data.get('web')
     if web and isinstance(web, list):
         for item in web:
-            print(u'{0}: {1}'.format(item['key'], ','.join(item['value'])))
-
-    print(u'\n')
+            print(u'    {0}: {1}'.format(item['key'], '\033[1;31;40m; \033[0m'.join(item['value'])))
+    print()
 
 
 def main():
-    if not len(sys.argv) > 1:
+    if not len(sys.argv) > 1 or (len(sys.argv) == 2 and sys.argv[1] == '--help'):
         return print(u"""
     Usage:
-    khahux_t <word>
+    \033[1;32;40mkhahux_t\033[0m <word>
         """)
 
     q = ' '.join(sys.argv[1:])
